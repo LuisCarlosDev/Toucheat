@@ -29,8 +29,14 @@ export default function Home() {
 
   const size = useWindowSize();
 
+  const hour = new Date();
+
+  let hours = hour.getHours();
+  let minutes = hour.getMinutes();
+  let seconds = hour.getSeconds();
+
   const dateAndTime = useMemo(() => {
-    return format(endOfDay(new Date()), "dd 'de' MMMM 'de' yyyy 'às' HH:mm:ss", { locale: ptBR });
+    return format(endOfDay(new Date()), `dd 'de' MMMM 'de' yyyy 'às' ${hours}':'${minutes}'`, { locale: ptBR });
   }, []);
 
   return (
