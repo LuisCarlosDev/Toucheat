@@ -55,19 +55,17 @@ export default function Home() {
         <Separator>
 
           {size.width <= 768 ? (
-            <Separator>
-              <Listdemand>
-                {data?.lastCalls.map(lastCall => (
-                  <Demand key={lastCall.numeroIdentificador}>
-                    <img src={lastCall?.empresaLogotipo} alt={lastCall.empresaNome} />
+            <Listdemand>
+              {data?.lastCalls.map(lastCall => (
+                <Demand key={lastCall.numeroIdentificador}>
+                  <img src={lastCall?.empresaLogotipo} alt={lastCall.empresaNome} />
 
-                    <h2>{lastCall.numeroIdentificador}</h2>
+                  <h2>{lastCall.numeroIdentificador}</h2>
 
-                    <span>{lastCall.horarioPrimeiraNotificacao}</span>
-                  </Demand>
-                ))}
-              </Listdemand>
-            </Separator>
+                  <span>{lastCall.horarioPrimeiraNotificacao}</span>
+                </Demand>
+              ))}
+            </Listdemand>
           ) : (
             <>
               <Listdemand>
